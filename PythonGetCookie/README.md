@@ -1,0 +1,3 @@
+# 仅通过python3网络库获取请求cookie
+
+通过python3网络库获取连接cookie

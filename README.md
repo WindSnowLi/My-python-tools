@@ -9,3 +9,7 @@
 ## DownloadM3u8
 
 下载网站的m3u8视频并合并成完整视频文件
+
+## PythonGetCookie
+
+通过python3网络库获取连接cookie
