@@ -1,10 +1,16 @@
+# -*- coding: UTF-8 -*-
+
 from http import cookiejar
 from urllib import request
+from pip._vendor import requests
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
+import time
 import json
 
-from pip._vendor import requests
 
-
+# 使用python库直接获取cookie
 def get_cookie(url):
     """
 
@@ -33,5 +39,43 @@ def get_cookie(url):
         return ''
 
 
+# 需要安装火狐浏览器，并下载geckodriver驱动
+# 通过火狐浏览器获取cookie
+# 通过正常的浏览器请求，优点是在js中的请求也会发起，因为不是所有的请求都会有set-cookie写入
+# 缺点是加载慢
+def firefox_get_cookies(url):
+    """
+
+    :param url: 请求连接
+    :return:
+    """
+    c_service = Service('geckodriver')
+    driver = any
+    try:
+        c_service.command_line_args()
+        c_service.start()
+        firefox_options = Options()
+        # 不启动界面显示- linux下命令行模式必须启用
+        firefox_options.add_argument('-headless')
+        driver = Firefox(options=firefox_options)
+        driver.get(url)
+        # 第一次请求浏览器一般无法显示cookie
+        # 等待第一次加载完成
+        time.sleep(2)
+        # 刷新
+        driver.refresh()
+        # 等待第二次加载完成
+        time.sleep(2)
+        return driver.get_cookies()
+    except Exception as e:
+        print(e)
+    finally:
+        driver.quit()
+        c_service.stop()
+
+
 if __name__ == '__main__':
+    # 只会获取当前连接写入的cookie
     print(get_cookie('https://www.baidu.com'))
+    # 附带的请求写入的cookie也可以查询得到
+    print(firefox_get_cookies('https://www.baidu.com'))
