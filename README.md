@@ -1,27 +1,33 @@
-# PythonExample
+# [PythonExample](https://github.com/WindSnowLi/My-python-tools)
 
-关于pyhon的小例子
+Python used a small example.
 ___
 
-## 1. PseudoOperation
+## 1. [PseudoOperation](https://github.com/WindSnowLi/My-python-tools/tree/main/PseudoOperation)
 
-通过简单的记录鼠标坐标，并通过计算鼠标下图片的偏移来完成简单的位置校准，用于在微偏移的界面模拟鼠标操作
+By simply recording the mouse coordinates and calculating the offset of the image under the mouse to complete the simple position calibration, it is used to simulate the mouse operation in the micro offset interface.
+
+1. [Record section](https://github.com/WindSnowLi/My-python-tools/blob/main/PseudoOperation/main/record_process.py)
+2. [Operation part](https://github.com/WindSnowLi/My-python-tools/blob/main/PseudoOperation/main/operate_process.py)
+
 ___
 
-## 2. DownloadM3u8
+## 2. [DownloadM3u8](https://github.com/WindSnowLi/My-python-tools/blob/main/DownloadM3u8)
 
-下载网站的m3u8视频并合并成完整视频文件
+1. [Download the m3u8 video from the website](https://github.com/WindSnowLi/My-python-tools/blob/main/DownloadM3u8/dv.py)
+2. [Merge into a complete video file](https://github.com/WindSnowLi/My-python-tools/blob/main/DownloadM3u8/marge.py)
+
 ___
 
-## 3. PythonGetCookie
+## 3. [PythonGetCookie](https://github.com/WindSnowLi/My-python-tools/tree/main/PythonGetCookie)
 
-### 3.1 仅通过python3网络库获取请求cookie
+### 3.1 Get request cookie only through python3 Network Library
 
 ``` python
 def get_cookie(url)
 ```
 
-### 3.2 通过浏览器获取cookie(firefox与chrome类似)
+### 3.2 Get the cookie through the browser (similar to chrome)
 
 ``` python
 def firefox_get_cookies(url)
