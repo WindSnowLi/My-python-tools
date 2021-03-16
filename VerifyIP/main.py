@@ -53,6 +53,7 @@ def arrange_hosts():
     :return: 返回结果hosts列表
     """
     temp_hosts = []
+    temp_ip_key_value = {}
     my_flag = False
     with open(SYSTEM_HOSTS_PATH, 'r') as sf:
         for line in sf:
@@ -74,9 +75,14 @@ def arrange_hosts():
                 elif len(ip_key_values) > 1:
                     if my_flag:
                         for temp_ip in get_ip(ip_key_values[1]):
-                            temp_hosts.append(temp_ip + ' ' + ip_key_values[1])
+                            temp_ip_str = temp_ip + ' ' + ip_key_values[1]
+                            if temp_ip_str in temp_ip_key_value:
+                                continue
+                            temp_hosts.append(temp_ip_str)
+                            temp_ip_key_value[temp_ip_str] = ''
                     else:
                         temp_hosts.append(line_after)
+                        temp_ip_key_value[line_after] = ''
     return temp_hosts
 
 
