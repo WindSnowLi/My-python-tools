@@ -22,7 +22,7 @@ def backups_hosts():
     if not os.path.exists(user_home_backups):
         os.mkdir(user_home_backups + '/.backups_hosts')
     copyfile(SYSTEM_HOSTS_PATH, user_home_backups + '/hosts-' +
-             datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+             datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S"))
 
 
 def get_ip(domain_name):
