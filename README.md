@@ -34,3 +34,12 @@ def firefox_get_cookies(url)
 ```
 
 ___
+
+## 4. [VerifyIP]((https://github.com/WindSnowLi/My-python-tools/tree/main/VerifyIP))
+
+Backup and update the IP information in the system hosts file.
+
+1. ```# MY_MUST_START``` Start ID to be updated
+2. ```# MY_MUST_END``` End ID to be updated
+
+___
