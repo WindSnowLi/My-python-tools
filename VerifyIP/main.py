@@ -34,7 +34,7 @@ def get_ip(domain_name):
     response = urllib.request.urlopen(
         'http://ip.tool.chinaz.com/' + domain_name)
     html = response.read().decode("utf8")
-    reg_extract_element_re = r'<span class="Whwtdhalf w15-0" style="cursor:pointer;" onclick="AiWenIpData\(.*?</span>'
+    reg_extract_element_re = r'<span class="Whwtdhalf w15-0 lh45" style="cursor:pointer;" onclick="AiWenIpData\(.*?</span>'
     reg_extract_element = re.compile(reg_extract_element_re)  # 编译一下，运行更快
     elements = reg_extract_element.findall(
         str(html.encode('raw_unicode_escape')))
@@ -74,7 +74,12 @@ def arrange_hosts():
                     temp_hosts.append(line_after)
                 elif len(ip_key_values) > 1:
                     if my_flag:
-                        for temp_ip in get_ip(ip_key_values[1]):
+                        temp_ip_list = get_ip(ip_key_values[1])
+                        if len(temp_ip_list) == 0:
+                            temp_hosts.append(line_after)
+                            temp_ip_key_value[line_after] = ''
+                            continue
+                        for temp_ip in temp_ip_list:
                             temp_ip_str = temp_ip + ' ' + ip_key_values[1]
                             if temp_ip_str in temp_ip_key_value:
                                 continue
