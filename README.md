@@ -35,7 +35,7 @@ def firefox_get_cookies(url)
 
 ___
 
-## 4. [VerifyIP]((https://github.com/WindSnowLi/My-python-tools/tree/main/VerifyIP))
+## 4. [VerifyIP](https://github.com/WindSnowLi/My-python-tools/tree/main/VerifyIP)
 
 Backup and update the IP information in the system hosts file.
 
@@ -43,3 +43,9 @@ Backup and update the IP information in the system hosts file.
 2. ```# MY_MUST_END``` End ID to be updated
 
 ___
+
+## 5. [QR-Code](https://github.com/WindSnowLi/My-python-tools/tree/main/VerifyIP/QR-Code)
+
+1. Two dimensional identification code
+
+———

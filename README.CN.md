@@ -43,3 +43,9 @@ ___
 2. ```# MY_MUST_END``` 需要更新的结束标识
 
 ___
+
+## 5. [QR-Code](https://github.com/WindSnowLi/My-python-tools/tree/main/VerifyIP/QR-Code)
+
+1. Two dimensional identification code
+
+———
