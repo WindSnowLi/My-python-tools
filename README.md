@@ -44,8 +44,14 @@ Backup and update the IP information in the system hosts file.
 
 ___
 
-## 5. [QR-Code](https://github.com/WindSnowLi/My-python-tools/tree/main/VerifyIP/QR-Code)
+## 5. [QR-Code](https://github.com/WindSnowLi/My-python-tools/tree/main/QR-Code)
 
 1. Two dimensional identification code
 
 ———
+
+## 6. [Read-MNIST](https://github.com/WindSnowLi/My-python-tools/tree/main/Read-MNIST)
+
+1. You need to decompress the dataset to the same level directory of. Py file
+
+___

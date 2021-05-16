@@ -44,8 +44,14 @@ ___
 
 ___
 
-## 5. [QR-Code](https://github.com/WindSnowLi/My-python-tools/tree/main/VerifyIP/QR-Code)
+## 5. [QR-Code](https://github.com/WindSnowLi/My-python-tools/tree/main/QR-Code)
 
-1. Two dimensional identification code
+1. 二维识别码
 
 ———
+
+## 6. [Read-MNIST](https://github.com/WindSnowLi/My-python-tools/tree/main/Read-MNIST)
+
+1. 需自行解压数据集至.py文件同级目录
+
+___
