@@ -48,7 +48,7 @@ ___
 
 1. 二维识别码
 
-———
+————
 
 ## 6. [Read-MNIST](https://github.com/WindSnowLi/My-python-tools/tree/main/Read-MNIST)
 
@@ -60,4 +60,8 @@ ___
 
 1. Windows11开始菜单与Windows10开始菜单转换
 2. *需重启电脑*
+
+### 依赖
+
+1. pip install pywin32
 ___
