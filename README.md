@@ -58,7 +58,7 @@ ___
 
 ## 7. [Windows11Reg](https://github.com/WindSnowLi/My-python-tools/tree/main/Windows11Reg)
 
-1. Windows11开始菜单与Windows10开始菜单转换
+1. Windows11开始菜单与Windows10开始菜单转换（新版已失效）
 2. *需重启电脑*
 
 ### 依赖
