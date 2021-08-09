@@ -65,3 +65,9 @@ ___
 
 1. pip install pywin32
 ___
+
+## 8. [send_mail](https://github.com/WindSnowLi/My-python-tools/tree/main/send_mail)
+
+1. python3发送邮件
+
+---
