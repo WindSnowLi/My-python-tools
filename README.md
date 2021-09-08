@@ -80,7 +80,7 @@ ___
 
 ---
 
-## [Img->ico](https://github.com/WindSnowLi/My-python-tools/tree/main/Img->ico)
+## 10. [Img->ico](https://github.com/WindSnowLi/My-python-tools/tree/main/Img->ico)
 
 1. Python3修改图片格式为ico
 2. *有时会遇到将图片修改为ico格式，但是轻量级的工具不好找，在这里借用pillow库达到了这个效果*
