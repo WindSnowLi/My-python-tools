@@ -77,3 +77,10 @@ ___
 1. 使用`opencv-python`的`resize`函数
 2. Linux使用`pip3 install opencv-python`、Windows使用`pip install opencv-python`安装`opencv-python`
 3. 用于重设图片大小，主要用来遇到图片大小限制时缩放图片
+
+---
+
+## [Img->ico](https://github.com/WindSnowLi/My-python-tools/tree/main/Img->ico)
+
+1. Python3修改图片格式为ico
+2. *有时会遇到将图片修改为ico格式，但是轻量级的工具不好找，在这里借用pillow库达到了这个效果*
