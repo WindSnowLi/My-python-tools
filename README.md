@@ -99,3 +99,9 @@ ___
 ![img](./Img->Str/rs.png)
 
 ---
+
+## 12. [CheckID](https://github.com/WindSnowLi/My-python-tools/tree/main/CheckID)
+
+1. 校验身份证号是否合法
+
+---
