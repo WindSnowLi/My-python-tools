@@ -92,11 +92,11 @@ ___
 1. 简笔画图片转字符串
 2. 示例图片
 
-![img](./Img->Str/test.jpg)
+![img](./Img-_Str/test.jpg)
 
 3. 结果
 
-![img](./Img->Str/rs.png)
+![img](./Img-_Str/rs.png)
 
 ---
 
