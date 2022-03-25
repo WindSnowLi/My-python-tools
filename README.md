@@ -115,3 +115,7 @@ ___
 
 1. 计算文件的MD5
 ---
+
+## 15. [生成UUID](https://github.com/WindSnowLi/My-python-tools/tree/main/uuid)
+
+---
