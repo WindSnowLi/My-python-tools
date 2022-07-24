@@ -122,4 +122,12 @@ ___
 
 ## 16. [文件批量MD5命名](https://github.com/WindSnowLi/My-python-tools/tree/main/renane_files_md5)
 
+1. 批量将文件重命名为自身MD5，可用于合并文件夹文件内容时文件冲突覆盖
+
+---
+
+## 17. [过滤库文件](https://github.com/WindSnowLi/My-python-tools/tree/main/r_d_libs)
+
+1. 筛选文件夹中的d.lib、.lib、d.dll、.dll文件
+
 ---
