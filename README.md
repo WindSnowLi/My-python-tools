@@ -119,3 +119,7 @@ ___
 ## 15. [生成UUID](https://github.com/WindSnowLi/My-python-tools/tree/main/uuid)
 
 ---
+
+## 16. [文件批量MD5命名](https://github.com/WindSnowLi/My-python-tools/tree/main/renane_files_md5)
+
+---
