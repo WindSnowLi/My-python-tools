@@ -131,3 +131,15 @@ ___
 1. 筛选文件夹中的d.lib、.lib、d.dll、.dll文件
 
 ---
+
+## 18. [获取文本文件编码](https://github.com/WindSnowLi/My-python-tools/tree/main/get_encoding)
+
+1. 获取文本文件编码
+
+---
+
+## [导出源代码](https://github.com/WindSnowLi/My-python-tools/tree/main/export_source)
+
+1. 导出源代码
+
+---
