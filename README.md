@@ -138,8 +138,19 @@ ___
 
 ---
 
-## [导出源代码](https://github.com/WindSnowLi/My-python-tools/tree/main/export_source)
+## 19. [导出源代码](https://github.com/WindSnowLi/My-python-tools/tree/main/export_source)
 
 1. 导出源代码
+
+---
+
+## 20. [使用dlib预训练模型检测人脸和关键点](https://github.com/WindSnowLi/My-python-tools/tree/main/dlib-face)
+
+1. 使用dlib检测人脸和关键点
+
+2. 结果
+
+![img](./dlib-face/range.png)
+![img](./dlib-face/keys.png)
 
 ---
