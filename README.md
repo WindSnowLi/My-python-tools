@@ -47,6 +47,7 @@ ___
 ## 5. [QR-Code](https://github.com/WindSnowLi/My-python-tools/tree/main/QR-Code)
 
 1. 二维识别码
+2. 二维码创建
 
 ————
 
