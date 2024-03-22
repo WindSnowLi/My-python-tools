@@ -161,3 +161,14 @@ ___
 
 1. MP4转gif
 ---
+
+---
+
+## 22. [Yolov7人体关键点检测](https://github.com/WindSnowLi/My-python-tools/tree/main/yolov7-pose-estimation)
+
+1. yolov7-pose-estimation
+
+2. [yolov7-w6-pose.pt下载地址](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6-pose.pt) 
+
+![img](./yolov7-pose-estimation/pose.png)
+---
