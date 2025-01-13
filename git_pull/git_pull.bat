@@ -1,25 +1,25 @@
 @echo off
 setlocal
 
-rem æ£€æŸ¥æ˜¯å¦æä¾›äº†è·¯å¾„å‚æ•°
+rem ¼ì²éÊÇ·ñÌá¹©ÁËÂ·¾¶²ÎÊý
 if "%~1"=="" (
-    echo è¯·æä¾›ä¸€ä¸ªè·¯å¾„ä½œä¸ºå‚æ•°
+    echo ÇëÌá¹©Ò»¸öÂ·¾¶×÷Îª²ÎÊý
     exit /b 1
 )
 
-rem èŽ·å–è¾“å…¥çš„è·¯å¾„
+rem »ñÈ¡ÊäÈëµÄÂ·¾¶
 set "root_dir=%~1"
 
-rem æ£€æŸ¥è·¯å¾„æ˜¯å¦å­˜åœ¨
+rem ¼ì²éÂ·¾¶ÊÇ·ñ´æÔÚ
 if not exist "%root_dir%" (
-    echo è·¯å¾„ä¸å­˜åœ¨: %root_dir%
+    echo Â·¾¶²»´æÔÚ: %root_dir%
     exit /b 1
 )
 
-rem éåŽ†æ ¹ç›®å½•ä¸‹çš„æ‰€æœ‰æ–‡ä»¶å¤¹
+rem ±éÀú¸ùÄ¿Â¼ÏÂµÄËùÓÐÎÄ¼þ¼Ð
 for /d %%d in ("%root_dir%\*") do (
     if exist "%%d\.git" (
-        echo æ­£åœ¨æ‰§è¡Œ git pull: %%d
+        echo ÕýÔÚÖ´ÐÐ git pull: %%d
         pushd "%%d"
         git pull
         popd
