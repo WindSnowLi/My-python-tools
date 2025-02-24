@@ -3,38 +3,38 @@ param (
 )
 
 if (-not $root_dir) {
-    Write-Host "ÇëÌá¹©Ò»¸öÂ·¾¶×÷Îª²ÎÊı"
+    Write-Host "è¯·æä¾›ä¸€ä¸ªè·¯å¾„ä½œä¸ºå‚æ•°"
     exit 1
 }
 
 if (-not (Test-Path $root_dir)) {
-    Write-Host "Â·¾¶²»´æÔÚ: $root_dir"
+    Write-Host "è·¯å¾„ä¸å­˜åœ¨: $root_dir"
     exit 1
 }
 
-# ×î´ó²¢ĞĞÈÎÎñÊı
+# æœ€å¤§å¹¶è¡Œä»»åŠ¡æ•°
 $maxParallelJobs = 4
 
-# ÓÃÓÚ´æ´¢ÈÎÎñµÄ×´Ì¬
+# ç”¨äºå­˜å‚¨ä»»åŠ¡çš„çŠ¶æ€
 $jobs = @()
 $results = @()
 
-# »ñÈ¡ËùÓĞ°üº¬ .git ÎÄ¼ş¼ĞµÄÄ¿Â¼
+# è·å–æ‰€æœ‰åŒ…å« .git æ–‡ä»¶å¤¹çš„ç›®å½•
 $repos = Get-ChildItem -Path $root_dir -Directory | Where-Object { Test-Path "$($_.FullName)\.git" }
 
-# Êä³ö×Ü²Ö¿âÊı
-Write-Host "ÕÒµ½ $($repos.Count) ¸ö Git ²Ö¿â£¬¿ªÊ¼²¢ĞĞÀ­È¡..."
+# è¾“å‡ºæ€»ä»“åº“æ•°
+Write-Host "æ‰¾åˆ° $($repos.Count) ä¸ª Git ä»“åº“ï¼Œå¼€å§‹å¹¶è¡Œæ‹‰å–..."
 
-# ±éÀúËùÓĞ²Ö¿â
+# éå†æ‰€æœ‰ä»“åº“
 foreach ($repo in $repos) {
-    # Èç¹ûµ±Ç°²¢ĞĞÈÎÎñÊı´ïµ½×î´óÖµ£¬µÈ´ıÈÎÎñÍê³É
+    # å¦‚æœå½“å‰å¹¶è¡Œä»»åŠ¡æ•°è¾¾åˆ°æœ€å¤§å€¼ï¼Œç­‰å¾…ä»»åŠ¡å®Œæˆ
     while ($jobs.Count -ge $maxParallelJobs) {
         $completedJobs = $jobs | Where-Object { $_.State -eq "Completed" -or $_.State -eq "Failed" }
         foreach ($job in $completedJobs) {
             $output = Receive-Job -Job $job
             $results += [PSCustomObject]@{
                 Repository = $job.Name
-                Status    = if ($job.State -eq "Completed") { "³É¹¦" } else { "Ê§°Ü" }
+                Status    = if ($job.State -eq "Completed") { "æˆåŠŸ" } else { "å¤±è´¥" }
                 Output     = $output
             }
             Remove-Job -Job $job
@@ -43,7 +43,7 @@ foreach ($repo in $repos) {
         Start-Sleep -Milliseconds 200
     }
 
-    # Æô¶¯ĞÂÈÎÎñ
+    # å¯åŠ¨æ–°ä»»åŠ¡
     $job = Start-Job -Name $repo.FullName -ScriptBlock {
         param($dir)
         Push-Location $dir
@@ -61,17 +61,17 @@ foreach ($repo in $repos) {
     } -ArgumentList $repo.FullName
 
     $jobs += $job
-    Write-Host "Æô¶¯ÈÎÎñ: $($repo.FullName)"
+    Write-Host "å¯åŠ¨ä»»åŠ¡: $($repo.FullName)"
 }
 
-# µÈ´ıÊ£ÓàÈÎÎñÍê³É
+# ç­‰å¾…å‰©ä½™ä»»åŠ¡å®Œæˆ
 while ($jobs.Count -gt 0) {
     $completedJobs = $jobs | Where-Object { $_.State -eq "Completed" -or $_.State -eq "Failed" }
     foreach ($job in $completedJobs) {
         $output = Receive-Job -Job $job
         $results += [PSCustomObject]@{
             Repository = $job.Name
-            Status    = if ($job.State -eq "Completed") { "³É¹¦" } else { "Ê§°Ü" }
+            Status    = if ($job.State -eq "Completed") { "æˆåŠŸ" } else { "å¤±è´¥" }
             Output     = $output
         }
         Remove-Job -Job $job
@@ -80,12 +80,12 @@ while ($jobs.Count -gt 0) {
     Start-Sleep -Milliseconds 200
 }
 
-# Êä³ö×îÖÕ½á¹û
-Write-Host "`nËùÓĞÈÎÎñÍê³É£¬½á¹ûÈçÏÂ£º"
+# è¾“å‡ºæœ€ç»ˆç»“æœ
+Write-Host "`næ‰€æœ‰ä»»åŠ¡å®Œæˆï¼Œç»“æœå¦‚ä¸‹ï¼š"
 $results | Format-Table -AutoSize
 
-# Í³¼Æ³É¹¦ºÍÊ§°ÜµÄÈÎÎñÊı
-$successCount = ($results | Where-Object { $_.Status -eq "³É¹¦" }).Count
-$failedCount = ($results | Where-Object { $_.Status -eq "Ê§°Ü" }).Count
+# ç»Ÿè®¡æˆåŠŸå’Œå¤±è´¥çš„ä»»åŠ¡æ•°
+$successCount = ($results | Where-Object { $_.Status -eq "æˆåŠŸ" }).Count
+$failedCount = ($results | Where-Object { $_.Status -eq "å¤±è´¥" }).Count
 
-Write-Host "³É¹¦: $successCount, Ê§°Ü: $failedCount"
+Write-Host "æˆåŠŸ: $successCount, å¤±è´¥: $failedCount"
