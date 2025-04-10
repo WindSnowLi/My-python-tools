@@ -181,3 +181,6 @@ ___
 
 ---
 
+## 23. [提高图片亮度](https://github.com/WindSnowLi/My-python-tools/tree/main/IncreaseBrightness)
+
+---
