@@ -70,7 +70,7 @@ if ($proxyInfo.UseProxy -and $proxyInfo.Proxy) {
 }
 
 # 最大并行任务数
-$maxParallelJobs = 4
+$maxParallelJobs = 100
 
 # 用于存储任务的状态（使用 ArrayList 更稳妥）
 $jobs    = [System.Collections.ArrayList]::new()
